@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diagnosis Center</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body style="background-color: rgba(158, 245, 245, 0.699);">
+    <!-- Navbar -->
+    <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="components/logo.png" /> Heal INDIA
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Self-Assess</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hospital2.html">Hospitals </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vaccine.html">Vaccines</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <br>
+
+
+<div class="jumbotron" style="padding: 10%;" >
+    <h1>Online diagnosis</h1>
+    <p>Please fill the form below :</p>
+</div>
+
+<div class="container">
+    
+        <form>
+            <div class="form-group">
+                <label for="FormControlInput1">State your name please:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select City</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Chennai</option>
+                    <option>Mumbai</option>
+                    <option>Delhi/NCR</option>
+                    <option>Bangalore</option>
+                    <option>Kolkata</option>
+                    <option>Pune</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputZip"> AGE</label>
+                <input type="number" class="form-control" id="inputAge">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip"> Oxygen Level</label>
+                <input type="number" class="form-control" id="inputOxy">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputZip"> Temperature</label>
+                <input type="number" class="form-control" id="inputTemp">
+            </div>
+            <br>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="breathlessnessCheck">
+                <label class="form-check-label" for="autoSizingCheck2">
+                    Any symptoms of breathlessness
+                </label>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Any other Issues</label>
+                <textarea class="form-control" id="issuesText" rows="3"></textarea>
+            </div>
+<br>
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary"
+                onclick='checkDiag()'               
+                >Submit</button>
+
+            </div>
+        </form>
+
+
+</div>
+
+
+
+</body>
+<script >
+
+    function checkDiag() {
+        var temp = document.getElementById("inputTemp").value;
+        var oxyLevel =  document.getElementById("inputOxy").value;
+        var age = document.getElementById("inputAge").value;
+            if (oxyLevel < 90) {
+                //critical
+                window.open("res3.html");
+
+            }
+            else if (oxyLevel < 95) {
+                if (age > 55) {
+                    //critical
+                    window.open("res3.html");
+                }
+                else if (age > 25) {
+                    if (temp > 100) {
+                        //critical
+                        window.open("res3.html");
+                    }
+                    else {
+                        //moderate
+                        window.open("res2.html");
+                    }
+
+                }
+                else {
+                    //moderate
+                    window.open("res2.html");
+                }
+            }
+            else {
+                if (age > 55 && temp > 100) {
+                    //critical
+                    window.open("res3.html");
+                }
+                else if (age > 25 && temp > 100) {
+                    //moderate
+                    window.open("res2.html");
+                }
+                else {
+                    //safe
+                    window.open("res2.html");
+                }
+            }
+
+        }
+
+</script>
+
+</html>

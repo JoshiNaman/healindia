@@ -1,0 +1,107 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Healthcare Website</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="vaccines.css">
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <!-- Navbar -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+      <a class="navbar-brand"href="#">
+        <img class="logo" src="components/logo.png" /> Heal INDIA
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="diagnosis.html">Self-Assess</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resources.html">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hosp.html">Hospitals </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="vaccine.html">Vaccines</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+  <!-- End Navbar --><!-- Hero section -->
+  <!-- Hero section -->
+<section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Vaccination<br>Drive</h1>
+          <p>The only way to save yourself from the deadly virus and decrease the overall impact of it on the world is to get yourseld vaccinated. 
+              India administers two vaccines names Covaxin and Covishield.Register now and get vaccinated.
+          </p>
+          <button id="button" class="btn btn-dark btn-large" >Register Now</button>
+          <script type="text/javascript">
+            document.getElementById("button").onclick = function () {
+                location.href = "https://selfregistration.cowin.gov.in/";
+            };
+        </script>
+        </div>
+        <div class="col img-col">
+          <img src= "components/vaccchero.jpg" alt="Vaccination Drive">
+        </div>
+      </div>
+      <div class="row cards">
+  
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card1" style="width: 18rem;">
+            <div class="card-body">
+                <img src="components/covaxinpic.jpg" class="icon" alt="Covaxin"/>
+              <h5 class="card-title">Covaxin</h5>
+              <p class="card-text">Covaxin is the vaccine that is administered by Bharat Biotech..</p>
+            </div>
+          </div>
+        </div>
+  <!-- 
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <img src="./assets/icon2.svg" class="icon" alt="Service Two"/>
+              <h5 class="card-title">Machine Learning</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+    -->
+          
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <img src="components/covishield.jpg" class="icon" alt="Covishield"/>
+              <h5 class="card-title">Covishield</h5>
+              <p class="card-text">Covishield is the vaccine that is manufactured by Serum Institute of India.</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- End Hero section -->
+
+  </body>
+</html>
